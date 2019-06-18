@@ -1,0 +1,27 @@
+{
+    "name":"Filma24-Block Ads",
+    "version" : "1.0",
+    "manifest_version": 2,
+
+    "description": "Block Hobi.al ads over videos.",
+    "icons": {
+        "128":"myicon.png"
+    },
+
+    "browser_action": {
+        "default_title": "Remove Ads",
+        "default_popup": "popup.html"
+    },
+
+    "content_scripts": [
+        {
+          "matches": ["http://www.filma24.cc/*","https://www.filma24.cc/*"],
+          "js": ["popup.js"],
+          "run_at": "document_start"
+        }
+      ],
+
+    "permissions": [
+        "http://*/*" , "https://*/*","tabs"
+    ]
+}
